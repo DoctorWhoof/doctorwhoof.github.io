@@ -1,0 +1,65 @@
+/* Header Styles */
+
+.header {
+    padding: 4rem 0 2rem;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left h1 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
+    display: inline;
+}
+
+.header-left .subtitle {
+    font-size: 2.2rem;
+    color: var(--light-text);
+    font-weight: 300;
+    margin-left: 1.5rem;
+}
+
+.header-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.header-nav a {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+    color: var(--accent-color);
+}
+
+.header-nav a.active {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* Header Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 2rem 0 1rem;
+        margin-bottom: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .header-left h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-left .subtitle {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Santos - Animation Portfolio</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/article.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Portfolio Grid View -->
+        <div id="portfolio-view">
+            <div id="header-container">
+                <!-- Header will be loaded here -->
+            </div>
+
+
+
+            <div id="loading" class="loading">
+                Loading projects...
+            </div>
+
+            <div class="portfolio-grid" id="portfolio-grid" style="display: none;">
+                <!-- Projects will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Article View -->
+        <div id="article-view" class="article-view">
+            <a href="#" class="back-button" id="back-button">Back to Portfolio</a>
+            <div id="article-content">
+                <!-- Article content will be loaded here -->
+            </div>
+        </div>
+
+        <div id="footer-container">
+            <!-- Footer will be loaded here -->
+        </div>
+
+    </div>
+
+    <script src="js/markdown-parser.js"></script>
+    <script src="js/content-loader.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script>
+        // Initialize header for work page
+        document.addEventListener('DOMContentLoaded', () => {
+            new HeaderManager('work');
+        });
+    </script>
+</body>
+</html>

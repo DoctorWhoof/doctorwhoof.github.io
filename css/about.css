@@ -1,0 +1,107 @@
+/* About Page Styles */
+
+/* About Content */
+.about-content {
+    margin-bottom: 4rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0;
+}
+
+.about-intro {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: flex-start;
+}
+
+.profile-image {
+    width: 100%;
+    aspect-ratio: 538/849;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    display: block;
+}
+
+.profile-column {
+    flex: 1;
+}
+
+.intro-content {
+    flex: 1;
+}
+
+.about-section {
+    margin-bottom: 3rem;
+}
+
+.about-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.about-section p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 1.4rem;
+}
+
+.about-section ul {
+    margin: 1rem 0 1.5rem 2rem;
+}
+
+.about-section li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.contact-info {
+    background: var(--loading-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+}
+
+.contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.portrait-attribution {
+    font-size: 0.75rem;
+    color: var(--lighter-text);
+    margin-top: 0.5rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.portrait-attribution a {
+    color: var(--lighter-text);
+    text-decoration: none;
+}
+
+.portrait-attribution a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* About Responsive */
+@media (max-width: 768px) {
+    .about-intro {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .profile-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}

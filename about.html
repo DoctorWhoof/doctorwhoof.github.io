@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Leo Santos</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <script src="js/markdown-parser.js"></script>
+    <script src="js/content-loader.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/about.js"></script>
+
+</body>
+</html>
+    <div class="container">
+        <div id="header-container">
+            <!-- Header will be loaded here -->
+        </div>
+
+        <div class="about-content">
+            <div class="about-intro">
+                <div class="profile-column">
+                    <img src="media/portrait.jpg" alt="Leo Santos" class="profile-image">
+                    <p class="portrait-attribution">painting by <a href="https://www.charlieramos.net/paintings" target="_blank">Charlie Ramos</a></p>
+                </div>
+
+                <div class="intro-content" id="about-content">
+                    <div>Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer-container">
+            <!-- Footer will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        // Initialize header for about page
+        document.addEventListener('DOMContentLoaded', () => {
+            new HeaderManager('about');
+        });
+    </script>
+</body>
+</html>

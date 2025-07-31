@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Test</title>
+</head>
+<body>
+    <h1>Video Loading Test</h1>
+    
+    <h2>Test 1: Direct HTML video tag</h2>
+    <video controls width="800">
+        <source src="media/videos/AnimationReel_2010-07.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <h2>Test 2: Simple video tag</h2>
+    <video controls src="media/videos/AnimationReel_2010-07.mp4" width="800">
+        Your browser does not support the video tag.
+    </video>
+    
+    <h2>Test 3: Check if file exists</h2>
+    <p>File path: media/videos/AnimationReel_2010-07.mp4</p>
+    <p>Open browser dev tools and check Network tab to see if the video file loads.</p>
+    
+    <script>
+        // Test if the video file is accessible
+        fetch('media/videos/AnimationReel_2010-07.mp4', { method: 'HEAD' })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Video file is accessible');
+                    document.body.innerHTML += '<p style="color: green;">✓ Video file is accessible</p>';
+                } else {
+                    console.log('Video file not found or not accessible');
+                    document.body.innerHTML += '<p style="color: red;">✗ Video file not accessible (Status: ' + response.status + ')</p>';
+                }
+            })
+            .catch(error => {
+                console.log('Error accessing video file:', error);
+                document.body.innerHTML += '<p style="color: red;">✗ Error accessing video file: ' + error.message + '</p>';
+            });
+    </script>
+</body>
+</html>

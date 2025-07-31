@@ -1,0 +1,182 @@
+[
+    {
+      "title": "Gatto",
+      "role": "Lead Layout Artist",
+      "year": "2027",
+      "studio": "Pixar Animation Studios",
+      "filename": "stub.md",
+      "thumbnail": "gatto.jpg",
+      "category": "Film"
+    },
+  {
+    "title": "Elio",
+    "role": "Layout Artist",
+    "year": "2025",
+    "studio": "Pixar Animation Studios",
+    "filename": "2025-07-28-elio.md",
+    "thumbnail": "elio.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Win or Lose",
+    "role": "Layout Artist",
+    "year": "2025",
+    "studio": "Pixar Animation Studios",
+    "filename": "2025-02-19-win-or-lose.md",
+    "thumbnail": "win-or-lose.jpg",
+    "category": "Series"
+  },
+  {
+    "title": "Inside Out 2",
+    "role": "Layout Artist",
+    "year": "2024",
+    "studio": "Pixar Animation Studios",
+    "filename": "2024-06-14-inside-out-2.md",
+    "thumbnail": "inside-out-2.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Lightyear",
+    "role": "Layout Artist",
+    "year": "2022",
+    "studio": "Pixar Animation Studios",
+    "filename": "2022-06-17-lightyear.md",
+    "thumbnail": "lightyear.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Luca",
+    "role": "Lead Layout Artist",
+    "year": "2021",
+    "studio": "Pixar Animation Studios",
+    "filename": "2021-06-18-luca.md",
+    "thumbnail": "luca.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Soul",
+    "role": "Layout Artist",
+    "year": "2020",
+    "studio": "Pixar Animation Studios",
+    "filename": "2020-12-25-soul.md",
+    "thumbnail": "soul.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Onward",
+    "role": "Lead Layout Artist",
+    "year": "2020",
+    "studio": "Pixar Animation Studios",
+    "filename": "2020-03-06-onward.md",
+    "thumbnail": "onward.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Incredibles 2",
+    "role": "Layout Artist",
+    "year": "2018",
+    "studio": "Pixar Animation Studios",
+    "filename": "2018-06-29-incredibles2.md",
+    "thumbnail": "incredibles2.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Coco",
+    "role": "Lead Layout Artist",
+    "year": "2017",
+    "studio": "Pixar Animation Studios",
+    "filename": "2017-11-22-coco.md",
+    "thumbnail": "coco.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Finding Dory",
+    "role": "Layout Artist",
+    "year": "2016",
+    "studio": "Pixar Animation Studios",
+    "filename": "2016-06-17-finding-dory.md",
+    "thumbnail": "finding-dory.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Inside Out",
+    "role": "Layout Artist",
+    "year": "2015",
+    "studio": "Pixar Animation Studios",
+    "filename": "2015-06-19-inside-out.md",
+    "thumbnail": "inside-out.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "The Good Dinosaur",
+    "role": "Layout Artist",
+    "year": "2015",
+    "studio": "Pixar Animation Studios",
+    "filename": "2015-11-25-the-good-dinosaur.md",
+    "thumbnail": "the-good-dinosaur.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Monsters University",
+    "role": "Layout Artist",
+    "year": "2013",
+    "studio": "Pixar Animation Studios",
+    "filename": "2013-06-21-monsters-university.md",
+    "thumbnail": "monsters-university.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Brave",
+    "role": "Layout Artist",
+    "year": "2012",
+    "studio": "Pixar Animation Studios",
+    "filename": "2012-06-22-brave.md",
+    "thumbnail": "brave.jpg",
+    "category": "Film"
+  },
+  {
+    "title": "Goldfish Crackers",
+    "role": "Director, Animation Supervisor",
+    "year": "2011",
+    "studio": "Blur Studio",
+    "filename": "2011-05-15-goldfish-crackers.md",
+    "thumbnail": "goldfish-crackers.jpg",
+    "category": "Commercial"
+  },
+  {
+    "title": "Jabberwocky",
+    "role": "Animator, Animation Supervisor",
+    "year": "2010",
+    "studio": "Blur Studio",
+    "filename": "2010-12-01-jabberwocky.md",
+    "thumbnail": "jabberwocky.jpg",
+    "category": "Games"
+  },
+  {
+    "title": "Active Play",
+    "role": "Director, Animation Supervisor",
+    "year": "2010",
+    "studio": "Blur Studio",
+    "filename": "2010-08-15-active-play.md",
+    "thumbnail": "active-play.jpg",
+    "category": "Commercial"
+  },
+  {
+    "title": "2010 Layout Reel",
+    "role": "Layout Artist",
+    "year": "2010",
+    "studio": "Blur Studio",
+    "filename": "2010-06-01-layout-reel.md",
+    "thumbnail": "layout-reel-2010.jpg",
+    "category": "Reel"
+  },
+  {
+    "title": "2010 Animation Reel",
+    "role": "Animator, Animation Supervisor",
+    "year": "2010",
+    "studio": "Blur Studio",
+    "filename": "2010-03-01-animation-reel.md",
+    "thumbnail": "animation-reel-2010.jpg",
+    "category": "Reel"
+  }
+]

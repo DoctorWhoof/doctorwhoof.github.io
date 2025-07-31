@@ -1,0 +1,168 @@
+/* Shared CSS - Centralized color scheme and typography */
+
+/* Color Scheme */
+:root {
+    --primary-text: #1a1a1a;
+    --body-text: #777;
+    --light-text: #666;
+    --lighter-text: #999;
+    --background: #fefefe;
+    --accent-color: #bbb;
+    --accent-hover: #666;
+    --border-color: #e5e5e5;
+    --error-color: #cc4444;
+    --overlay-bg: rgba(0,0,0,0.8);
+    --overlay-text: rgba(255,255,255,0.8);
+    --overlay-light: rgba(255,255,255,0.6);
+    --card-bg: white;
+    --loading-bg: #f8f9fa;
+}
+
+/* Typography */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--body-text);
+    background-color: var(--background);
+    font-size: 0.9rem;
+}
+
+/* Headings use primary text color and Futura-like font */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-text);
+    font-family: 'Futura', 'Century Gothic', 'Trebuchet MS', 'Avenir', sans-serif;
+}
+
+/* Body text uses gray */
+p, li, .body-text {
+    color: var(--body-text);
+}
+
+/* Light text variants */
+.light-text {
+    color: var(--light-text);
+}
+
+.lighter-text {
+    color: var(--lighter-text);
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* Common utility classes */
+.primary-text {
+    color: var(--primary-text);
+}
+
+.accent-text {
+    color: var(--accent-color);
+}
+
+.error-text {
+    color: var(--error-color);
+}
+
+/* Reset margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Loading states */
+.loading {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--light-text);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.article-loading {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--light-text);
+}
+
+.article-error {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--error-color);
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid var(--border-color, #e5e5e5);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-email {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-email:hover {
+    text-decoration: underline;
+}
+
+.up-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    z-index: 100;
+    display: none;
+    white-space: nowrap;
+}
+
+.up-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.up-button.visible {
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .up-button {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
