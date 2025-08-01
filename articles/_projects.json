@@ -24,7 +24,7 @@
     "studio": "Pixar Animation Studios",
     "filename": "2025-02-19-win-or-lose.md",
     "thumbnail": "win-or-lose.jpg",
-    "category": "Series"
+    "category": "TV"
   },
   {
     "title": "Inside Out 2",
@@ -43,6 +43,15 @@
     "filename": "2022-06-17-lightyear.md",
     "thumbnail": "lightyear.jpg",
     "category": "Film"
+  },
+  {
+    "title": "Ciao Alberto",
+    "role": "Director of Photography - Layout",
+    "year": "2022",
+    "studio": "Pixar Animation Studios",
+    "filename": "2022-01-ciao-alberto.md",
+    "thumbnail": "ciao-alberto.jpg",
+    "category": "TV"
   },
   {
     "title": "Luca",
@@ -150,7 +159,7 @@
     "studio": "Blur Studio",
     "filename": "2010-12-01-jabberwocky.md",
     "thumbnail": "jabberwocky.jpg",
-    "category": "Games"
+    "category": "Game"
   },
   {
     "title": "Active Play",

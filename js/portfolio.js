@@ -17,7 +17,7 @@ class Portfolio {
 
     setupEventListeners() {
         // Back button functionality
-        const backButton = document.getElementById('back-button');
+        const backButton = document.getElementById('back-to-portfolio-button');
         if (backButton) {
             backButton.addEventListener('click', (e) => {
                 e.preventDefault();
