@@ -126,7 +126,7 @@ class Portfolio {
 
         if (projects.length === 0) {
             if (loading) {
-                loading.textContent = 'Error loading projects. Make sure articles/_projects.json exists.';
+                loading.textContent = 'Error loading projects. Make sure /articles/_projects.json exists.';
             }
             return;
         }
