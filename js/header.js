@@ -15,7 +15,7 @@ class HeaderManager {
 
     async loadHeader() {
         try {
-            const response = await fetch('includes/header.html');
+            const response = await fetch('/includes/header.html');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -33,7 +33,7 @@ class HeaderManager {
 
     async loadFooter() {
         try {
-            const response = await fetch('includes/footer.html');
+            const response = await fetch('/includes/footer.html');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

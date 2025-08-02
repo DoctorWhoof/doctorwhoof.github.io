@@ -9,10 +9,10 @@ class Portfolio {
         this.init();
     }
 
-    init() {
+    async init() {
         this.setupEventListeners();
-        this.loadPortfolioGrid();
-        this.handleInitialState();
+        await this.loadPortfolioGrid();
+        await this.handleInitialState();
     }
 
     setupEventListeners() {
@@ -51,18 +51,7 @@ class Portfolio {
 
 
 
-    handleInitialState() {
-        // Check if we should show an article based on URL hash
-        const hash = window.location.hash;
-        if (hash.startsWith('#project-')) {
-            const projectId = hash.substring(9); // Remove '#project-'
-            // We'll need to wait for projects to load first
-            setTimeout(() => this.showArticleById(projectId), 100);
-        } else {
-            // Set initial state for portfolio view
-            history.replaceState({ view: 'portfolio' }, '', window.location.pathname);
-        }
-    }
+
 
     filterProjects(category) {
         this.currentFilter = category;
@@ -80,13 +69,13 @@ class Portfolio {
 
 
 
-    handleInitialState() {
+    async handleInitialState() {
         // Check if we should show an article based on URL hash
         const hash = window.location.hash;
         if (hash.startsWith('#project-')) {
             const projectId = hash.substring(9); // Remove '#project-'
-            // We'll need to wait for projects to load first
-            setTimeout(() => this.showArticleById(projectId), 100);
+            // Wait for projects to load properly
+            await this.showArticleById(projectId);
         } else {
             // Set initial state for portfolio view
             history.replaceState({ view: 'portfolio' }, '', window.location.pathname);
@@ -98,7 +87,7 @@ class Portfolio {
         card.className = 'project-card';
         
         const thumbnailHTML = project.thumbnail 
-            ? `<img src="media/thumbnails/${project.thumbnail}" alt="${project.title}">`
+            ? `<img src="/media/thumbnails/${project.thumbnail}" alt="${project.title}">`
             : `<div class="project-thumbnail-placeholder">${project.title} - Thumbnail</div>`;
 
         card.innerHTML = `
@@ -218,7 +207,8 @@ class Portfolio {
 
     async showArticleById(projectId) {
         // Find project by ID and show it
-        const projects = await ContentLoader.loadProjects();
+        // Use cached projects if available, otherwise load them
+        const projects = this.allProjects.length > 0 ? this.allProjects : await ContentLoader.loadProjects();
         const project = projects.find(p => p.filename.replace('.md', '') === projectId);
         if (project) {
             await this.showArticle(project, false); // Don't push state since we're handling initial load
