@@ -1,10 +1,9 @@
 // Simple markdown parser for basic formatting
-// Updated: 2025-01-28 - Fixed video syntax parsing
-// *** CURRENT VERSION LOADED - TEST MARKER 123 ***
+// *** FLOAT DIAGNOSTIC BUILD - V2 ***
 function parseMarkdown(markdown) {
-    console.log('*** CURRENT PARSER LOADING - TEST MARKER 123 ***');
+    console.log('*** FLOAT DIAGNOSTIC BUILD - V2 ***');
     console.log('parseMarkdown called with:', markdown);
-    
+
     let result = markdown
         // Headers
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')
@@ -14,6 +13,17 @@ function parseMarkdown(markdown) {
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         // Italic
         .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        // Floating images: convert to unique placeholders early, before links or
+        // HTML passthrough can interfere. They will be resolved last, after paragraph
+        // processing, so we can strip the <p> wrapper cleanly in one step.
+        .replace(/\[image-right\]\(([^)]+)\)/g, (match, path) => {
+            console.log('FLOAT: created RIGHT placeholder for path:', path);
+            return '###FLOAT_RIGHT_' + btoa(path) + '###';
+        })
+        .replace(/\[image-left\]\(([^)]+)\)/g, (match, path) => {
+            console.log('FLOAT: created LEFT placeholder for path:', path);
+            return '###FLOAT_LEFT_' + btoa(path) + '###';
+        })
         // HTML passthrough (preserve iframe and other HTML tags)
         .replace(/(<(?:iframe|div|span|blockquote)[^>]*>.*?<\/(?:iframe|div|span|blockquote)>)/gs, (match) => {
             console.log('HTML element preserved:', match);
@@ -24,21 +34,20 @@ function parseMarkdown(markdown) {
             console.log('Video regex matched:', match, 'path:', path);
             return '<video controls><source src="' + path + '" type="video/mp4">Your browser does not support the video tag.</video>';
         })
-        // Links
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
+        // Images
+        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">')
+        // Links (negative lookbehind prevents matching image syntax)
+        .replace(/(?<!!)\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
             console.log('Link regex matched:', match, 'text:', text, 'url:', url);
             return '<a href="' + url + '">' + text + '</a>';
         })
-        // Images
-        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1">')
-        // Line breaks and paragraphs - handle double breaks as spacing, single as new paragraphs
-        .replace(/\n\n/g, '</p><p class="paragraph-break">')
-        .replace(/\n/g, '</p><p>')
+        // Line breaks and paragraphs: single newline → <br>, two or more → new paragraph
+        .replace(/\n{2,}/g, '</p><p>')
+        .replace(/\n/g, '<br>')
         // Wrap in paragraphs
         .replace(/^(.+)/, '<p>$1')
         .replace(/(.+)$/, '$1</p>')
-        // Add spacing for paragraph breaks
-        .replace(/<p class="paragraph-break">/g, '</p><p style="margin-top: 2rem;">')
+
         // Lists
         .replace(/^\* (.+)$/gm, '<li>$1</li>')
         .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
@@ -46,7 +55,30 @@ function parseMarkdown(markdown) {
         .replace(/###HTML_PLACEHOLDER_([^#]+)###/g, (match, encoded) => {
             return atob(encoded);
         });
-    
-    console.log('parseMarkdown result:', result);
+
+    // Log the HTML at this point so we can see if float placeholders survived
+    console.log('FLOAT: HTML before float resolution:', result);
+
+    result = result
+        // Resolve float placeholders last: replace the entire <p>...</p> wrapper
+        // that paragraph processing created around them, producing a clean <div>
+        // sibling to the text paragraphs so CSS float works correctly.
+        .replace(/<p[^>]*>\s*###FLOAT_RIGHT_([^#]+)###\s*<\/p>/g, (match, encoded) => {
+            const src = atob(encoded);
+            console.log('FLOAT: resolved RIGHT placeholder, src:', src, 'matched wrapper:', match);
+            return '<div class="image-float-right"><img src="' + src + '"></div>';
+        })
+        .replace(/<p[^>]*>\s*###FLOAT_LEFT_([^#]+)###\s*<\/p>/g, (match, encoded) => {
+            const src = atob(encoded);
+            console.log('FLOAT: resolved LEFT placeholder, src:', src, 'matched wrapper:', match);
+            return '<div class="image-float-left"><img src="' + src + '"></div>';
+        });
+
+    // Warn if any float placeholders were NOT resolved (e.g. not wrapped in <p> as expected)
+    if (result.includes('###FLOAT_')) {
+        console.warn('FLOAT: unresolved placeholder still present in output! Full result:', result);
+    }
+
+    console.log('parseMarkdown final result:', result);
     return result;
 }

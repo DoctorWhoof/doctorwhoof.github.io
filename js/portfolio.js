@@ -29,6 +29,9 @@ class Portfolio {
         window.addEventListener('popstate', (e) => {
             if (e.state && e.state.view === 'article') {
                 this.showArticleFromState(e.state.project);
+            } else if (window.location.hash.startsWith('#project-')) {
+                const projectId = window.location.hash.substring(9);
+                this.showArticleById(projectId);
             } else {
                 this.showPortfolio(false); // Don't push state when handling popstate
             }

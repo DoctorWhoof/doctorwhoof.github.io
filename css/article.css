@@ -94,6 +94,32 @@
     border-radius: 4px;
 }
 
+.article-content div.image-float-right {
+    float: right;
+    width: 50%;
+    margin: 0.25rem 0 1rem 1.5rem;
+}
+
+.article-content div.image-float-left {
+    float: left;
+    width: 50%;
+    margin: 0.25rem 1.5rem 1rem 0;
+}
+
+.article-content div.image-float-right img,
+.article-content div.image-float-left img {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    border-radius: 4px;
+}
+
+.article-content::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
 .article-content video {
     width: 100%;
     height: auto;
@@ -120,5 +146,12 @@
         left: 1rem;
         padding: 0.27rem 0.53rem;
         font-size: 0.8rem;
+    }
+
+    .article-content div.image-float-right,
+    .article-content div.image-float-left {
+        float: none;
+        width: 100%;
+        margin: 1.5rem 0;
     }
 }
